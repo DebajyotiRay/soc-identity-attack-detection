@@ -1,0 +1,24 @@
+# Secrets & credentials
+.env
+*.pem
+*.key
+config/secrets*
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Logs and local data
+*.log
+data/
+
+# Personal planning docs (keep out of public repo)
+project_blueprint.txt
+notes/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
