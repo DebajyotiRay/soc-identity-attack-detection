@@ -12,6 +12,7 @@ venv/
 
 # Logs and local data
 *.log
+!identity_lab.log
 data/
 
 # Personal planning docs (keep out of public repo)

@@ -1,0 +1,29 @@
+<decoder name="identity-lab-login">
+  <prematch>LOGIN_ATTEMPT</prematch>
+</decoder>
+
+<decoder name="identity-lab-login">
+  <parent>identity-lab-login</parent>
+  <regex>LOGIN_ATTEMPT timestamp=(\S+ \S+) user=(\S+) role=(\S+) ip=(\S+) device="(\.+)" result=(\S+)</regex>
+  <order>timestamp, user, role, srcip, extra_data, result</order>
+</decoder>
+
+<decoder name="identity-lab-rolechange">
+  <prematch>ROLE_CHANGE</prematch>
+</decoder>
+
+<decoder name="identity-lab-rolechange">
+  <parent>identity-lab-rolechange</parent>
+  <regex>ROLE_CHANGE timestamp=(\S+ \S+) actor=(\S+) ip=(\S+) target=(\S+) old_role=(\S+) new_role=(\S+) result=(\S+)</regex>
+  <order>timestamp, user, srcip, target_user, old_role, new_role, result</order>
+</decoder>
+
+<decoder name="identity-lab-mfa">
+  <prematch>MFA_EVENT</prematch>
+</decoder>
+
+<decoder name="identity-lab-mfa">
+  <parent>identity-lab-mfa</parent>
+  <regex>MFA_EVENT timestamp=(\S+ \S+) user=(\S+) role=(\S+) ip=(\S+) device="(\.+)" action=(\S+) result=(\S+)</regex>
+  <order>timestamp, user, role, srcip, extra_data, status, result</order>
+</decoder>
